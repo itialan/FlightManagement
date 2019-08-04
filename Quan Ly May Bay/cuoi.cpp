@@ -176,7 +176,7 @@ void setColor(int textColor, int BackColor){
 	SetConsoleTextAttribute(Console_Handle, color);
 }
 //=======================Giao Dien=======================
-// H‡m xÛa m‡n hÏnh.
+// H√†m x√≥a m√†n h√¨nh.
 void XoaManHinh()
 {
 	for (int i =3;i<29;i++)
@@ -373,7 +373,7 @@ int taodoxMenuChinh[5];
 
 void Intro(){
 	string a;
-	ifstream file("E:\\B‡i\\Code\\do an\\lammau.txt");
+	ifstream file("E:\\B√†i\\Code\\do an\\lammau.txt");
 	while(!file.eof()){
 		getline(file, a);		
 		cout << a << endl;
@@ -729,12 +729,12 @@ void Display3(){
 	}
 	
 	TextColor(14);
-	gotoxy(32, 17); cout << "NGO QUANG HOA";
-	gotoxy(32, 19); cout << "N17DCCN051";
-	gotoxy(45, 19); cout << "D17CQCN01 - N";
-	gotoxy(32, 21); cout << "LUONG QUANG HUY";
-	gotoxy(32, 23); cout << "N17DCCN057";
-	gotoxy(45, 23); cout << "D17CQCN01 - N";
+	gotoxy(32, 17); cout << "xxxxxxxxxxxxxxx";
+	gotoxy(32, 19); cout << "xxxxxxxxxx";
+	gotoxy(45, 19); cout << "xxxxxxxxxxxxxxx";
+	gotoxy(32, 21); cout << "xxxxxxxxxxxxxxx";
+	gotoxy(32, 23); cout << "xxxxxxxxxx";
+	gotoxy(45, 23); cout << "xxxxxxxxxxxxx";
 	TextColor(11);
 
 	gotoxy(25, 26); cout << char(192);
@@ -820,7 +820,7 @@ bool KiemTraNgayThangCoHopLe(DateTime dt){
 	if (!KiemTraNgayThang(dt)) return false;
 	DateTime dtime;
 	NgayTrongNam[2] = 28;
-	time_t hienTai = time(0); // time_t la kieu du lieu thoi gian : cÛ gi· tri l‡ so gi‚y tÌnh tu epoch (1970-01-01 00:00:00 UTC)
+	time_t hienTai = time(0); // time_t la kieu du lieu thoi gian : c√≥ gi√° tri l√† so gi√¢y t√≠nh tu epoch (1970-01-01 00:00:00 UTC)
 	tm *localT = localtime(&hienTai); // tm la mot struct, ham localtime dung de dinh dang ngay thang nam cho so giay ke tu epoch (1970-01-01 00:00:00 UTC)
 	dtime.nam = 1900 + localT->tm_year;
 	dtime.thang = 1 + localT->tm_mon;
@@ -1931,7 +1931,7 @@ int ChooseTicket(Flight cb){
 	GiaoDienDatVe(cb, false);
 	int keyboard_read = 0;
 	int PASS = 1;
-	// danh dau Ù m‡u v‡o vi tri dau tien
+	// danh dau √¥ m√†u v√†o vi tri dau tien
 	SetBGColor(7);
 	gotoxy(20, 7);
 	TextColor(14);
@@ -2231,9 +2231,9 @@ bool KiemTraNgayThangCuaCB(Flight fl, listFlight cb) {
 void InputFlight(AirPlanes mb, listFlight &cb, Flight &fl, bool ChinhSua = false){
 	ShowCur(true);
 	int ordinal = 1;
-	bool isMoveUp = false; // bien nay dung de xac dinh xem nguoi dung co bam phÌm key_up khÙng?
+	bool isMoveUp = false; // bien nay dung de xac dinh xem nguoi dung co bam ph√≠m key_up kh√¥ng?
 	bool isSave = false;
-	bool idIsExist = false; // x·c dinh xem id cÛ ton tai chua? neu co thÏ moi nguoi dung nhap lai
+	bool idIsExist = false; // x√°c dinh xem id c√≥ ton tai chua? neu co th√¨ moi nguoi dung nhap lai
 	//bool idMBIsExist = false;
 	char idMB[15]; // id may bay
 	string id; // so hieu
@@ -2416,14 +2416,14 @@ void InputFlight(AirPlanes mb, listFlight &cb, Flight &fl, bool ChinhSua = false
 	ShowCur(false);
 }
 
-void ThietLapMauChoTungDong(Flight cb, int ThuTu) // thiet lap thanh s·ng m‡u cho tung` dong` cua chuyen bay
+void ThietLapMauChoTungDong(Flight cb, int ThuTu) // thiet lap thanh s√°ng m√†u cho tung` dong` cua chuyen bay
 {
 	SetBGColor(7);
 	XuatFlight(cb, (ThuTu % SOLUONGMOITRANG) * 2);
 	SetBGColor(0);
 }
 
-void ChuyenDoiTungDongChuyenBay(int ThuTu, Flight CbMoi, Flight CbCu) // chuyen thanh s·ng lÍn hay xuÙng' 
+void ChuyenDoiTungDongChuyenBay(int ThuTu, Flight CbMoi, Flight CbCu) // chuyen thanh s√°ng l√™n hay xu√¥ng' 
 {
 	int current = ThuTu;
 	ThietLapMauChoTungDong(CbMoi, current);
@@ -3140,7 +3140,7 @@ backMenu:
 
 //=========================DOC/GHI FILE========================
 void SaveMayBay(AirPlanes DSMB){
-	fstream fileOut1("E:\\B‡i\\Code\\do an\\maybay.txt", ios::out | ios::binary);
+	fstream fileOut1("E:\\B√†i\\Code\\do an\\maybay.txt", ios::out | ios::binary);
 	for (int i = 0; i < DSMB.n; i++)
 		fileOut1.write(reinterpret_cast<const char*>(DSMB.data[i]), sizeof(PData));
 
@@ -3148,7 +3148,7 @@ void SaveMayBay(AirPlanes DSMB){
 }
 
 void LoadMayBay(AirPlanes &DSMB){
-	fstream fileIn1("E:\\B‡i\\Code\\do an\\maybay.txt", ios::in | ios::binary);
+	fstream fileIn1("E:\\B√†i\\Code\\do an\\maybay.txt", ios::in | ios::binary);
 	while (!fileIn1.eof()) {
 		DSMB.data[++DSMB.n] = new PData;
 		fileIn1.read(reinterpret_cast<char*>(DSMB.data[DSMB.n]), sizeof(PData));
@@ -3159,7 +3159,7 @@ void LoadMayBay(AirPlanes &DSMB){
 
 void SaveChuyenBay(listFlight cb) {
 	int sizeFlight = sizeof(Flight) - sizeof(Ticket*);
-	fstream fileOut2("E:\\B‡i\\Code\\do an\\chuyenbay.txt", ios::out | ios::binary);
+	fstream fileOut2("E:\\B√†i\\Code\\do an\\chuyenbay.txt", ios::out | ios::binary);
 	fileOut2.write(reinterpret_cast<const char*>(&cb.n), sizeof(int));
 //	for (NODE_CHUYENBAY *q = cb.Head; q != NULL; q = q->Next) {
 //		fileOut2.write(reinterpret_cast<const char*>(&q->DataFlight), sizeFlight);
@@ -3181,7 +3181,7 @@ void SaveChuyenBay(listFlight cb) {
 void LoadChuyenBay(listFlight &cb) {
 	int sizeFlight = sizeof(Flight) - sizeof(Ticket*);
 	int SoChuyenBay;
-	fstream fileIn2("E:\\B‡i\\Code\\do an\\chuyenbay.txt", ios::in | ios::binary);
+	fstream fileIn2("E:\\B√†i\\Code\\do an\\chuyenbay.txt", ios::in | ios::binary);
 	InitListFlight(cb);
 	fileIn2.read(reinterpret_cast<char*>(&SoChuyenBay), sizeof(int));
 	Flight p;
@@ -3206,7 +3206,7 @@ void GhiHanhKhachVaoFile(treeHanhKhach p, fstream &fileOut3, int size) {
 }
 
 void SaveHanhKhach(treeHanhKhach point) {
-	fstream fileOut3("E:\\B‡i\\Code\\do an\\hanhkhach.txt", ios::out | ios::binary);
+	fstream fileOut3("E:\\B√†i\\Code\\do an\\hanhkhach.txt", ios::out | ios::binary);
 	fileOut3.write(reinterpret_cast<const char*>(&SoHanhKhach), sizeof(int));
 	//fileOut3 << SoHanhKhach;
 	int size = sizeof(HanhKhach);
@@ -3216,7 +3216,7 @@ void SaveHanhKhach(treeHanhKhach point) {
 }
 
 void LoadHanhKhach(treeHanhKhach &t) {
-	fstream fileIn3("E:\\B‡i\\Code\\do an\\hanhkhach.txt", ios::in | ios::binary);
+	fstream fileIn3("E:\\B√†i\\Code\\do an\\hanhkhach.txt", ios::in | ios::binary);
 	int SoHK;
 	HanhKhach hk;
 	fileIn3.read(reinterpret_cast<char*>(&SoHK), sizeof(int));
@@ -4105,7 +4105,7 @@ bool CauH(listFlight cb)
 		{
 			setColor(14, 3);
 			gotoxy(100, 12); cout << "   LEFT   ";
-			gotoxy(100, 13); cout << "   RIGHT  ";			// CÛ trang moi can sang trang
+			gotoxy(100, 13); cout << "   RIGHT  ";			// C√≥ trang moi can sang trang
 			setColor(3,0);
 			int trangHienTai = 1;
 			int tongsoTrang,keyboard;
